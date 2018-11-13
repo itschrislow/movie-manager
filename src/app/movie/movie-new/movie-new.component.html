@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <form [formGroup]="newMovieForm">
+      <label>Title</label>
+      <input type="text" formControlName="title" class="form-control">
+      <label>Production Status</label>
+      <div *ngFor="let status of statuses">
+        <input type="radio" formControlName="productionStatus" [value]="status"> {{status}} 
+      </div>
+      <label>Genre</label>
+      <input type="text" formControlName="genre" class="form-control">
+      <label>Director</label>
+      <input type="text" formControlName="director" class="form-control">
+      <label>Logline</label>
+      <input type="text" formControlName="logline" class="form-control">
+      <label>Image</label>
+      <input type="url" formControlName="image" class="form-control">
+      <div>
+        <label>Tags</label>
+        <ul class="list-group list-group-new">
+          <li *ngFor="let tag of tags" class="list-group-item">{{tag}}</li>
+        </ul>
+        <input type="text" formControlName="tags" class="form-control">
+        <button class="btn btn-primary" (click)="addTag()">Add Tag</button>
+      </div>
+      <div>
+      <label>Screenwriters</label>
+        <ul class="list-group list-group-new">
+          <li *ngFor="let writer of writers" class="list-group-item">{{writer}}</li>
+        </ul>
+        <input type="text" formControlName="screenwriters" class="form-control">
+        <button class="btn btn-primary" (click)="addWriter()">Add Writer</button>
+      </div>
+      <button class="btn btn-outline-primary float-right" [disabled]="!newMovieForm.valid" type="button" (click)="addMovie()">Add</button>
+  </form>
+</div>
+

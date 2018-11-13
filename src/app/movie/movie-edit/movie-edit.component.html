@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <form [formGroup]="editForm">
+      <label>Title</label>
+      <input type="text" formControlName="title" class="form-control">
+      <label>Production Status</label>
+      <div *ngFor="let status of statuses">
+        <input type="radio" formControlName="productionStatus" [value]="status"> {{status}} 
+      </div>
+      <label>Genre</label>
+      <input type="text" formControlName="genre" class="form-control">
+      <label>Director</label>
+      <input type="text" formControlName="director" class="form-control">
+      <label>Logline</label>
+      <input type="text" formControlName="logline" class="form-control">
+      <label>Image</label>
+      <input type="url" formControlName="image" class="form-control">
+      <button class="btn btn-outline-primary float-right" [disabled]="!editForm.valid" type="button" (click)="update()">Update</button>
+  </form>
+</div>

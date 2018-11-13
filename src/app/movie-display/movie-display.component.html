@@ -1,0 +1,7 @@
+<div *ngFor="let movie of currentMovie" class="card movie-card" [routerLink]="['movie', 'detail', movie.id]">
+	<img class="card-img-top" [src]="movie.image ? movie.image : '/assets/default.png'" alt="Card image cap">
+	<div class="card-body">
+		<h5 class="card-title">{{movie.title}} <span class="fa fa-edit" [routerLink]="['movie', 'edit', movie.id]"></span></h5>
+		<p class="card-text">Status: {{movie.productionStatus}}</p>
+	</div>
+</div>

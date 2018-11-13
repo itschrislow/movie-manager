@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~font-awesome/css/font-awesome.min.css';
+
+.btn.btn-circle {
+    padding: 0;
+    border-radius: 50%;
+}
+.btn-circle {
+    width: 70px;
+    height: 70px;
+}
+.btn-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 5rem;
+}
+.movie-card {
+    max-width: 25rem;
+}

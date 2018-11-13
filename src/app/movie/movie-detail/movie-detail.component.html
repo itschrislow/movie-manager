@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <img class="float-left" class="margin-top" [src]="movie.image ? movie.image : '/assets/default.png'" width="100%" >
+        </div>
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="display-3">{{movie.title}}</h5>
+                    <div>
+                        <p> {{movie.logline}} </p>
+                        <p ><span *ngFor="let tags of movie.tags">{{tags}} | </span></p>
+                        <p> <strong>Director:</strong> {{ movie.director}}</p>
+                        <p> <strong>Writers:</strong> {{ movie.screenwriters}}</p>
+                        <div>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="lead">
+                        <h5 class="display-4"> Production Notes </h5>
+                        <p> Status: {{ movie.productionStatus}}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
